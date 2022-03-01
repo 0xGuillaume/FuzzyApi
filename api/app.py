@@ -1,6 +1,6 @@
 from fastapi import FastAPI, HTTPException
-from models import FooModel
-from database import(
+from .models import FooModel
+from .database import(
     fetch_foos,
     fetch_foo,
 )
