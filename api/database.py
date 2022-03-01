@@ -1,5 +1,5 @@
 import motor.motor_asyncio
-from models import FooModel
+from .models import FooModel
 
 
 MONGODB_URL = "mongodb://root:root@localhost:27017"
@@ -8,7 +8,7 @@ client = motor.motor_asyncio.AsyncIOMotorClient(MONGODB_URL)
 database = client.fuzzy
 
 
-def fetch_foos():
+async def fetch_foos():
     """Fetch all foos"""
 
     documents = []
@@ -20,7 +20,7 @@ def fetch_foos():
     return documents
 
 
-def fetch_foo():
+async def fetch_foo():
     """Fetch one specifid foo (by id)"""
 
     document = await database.foo.find_one({"title": id})
