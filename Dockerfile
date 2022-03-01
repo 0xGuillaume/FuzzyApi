@@ -1,14 +1,14 @@
-# Custom Image : Run FuzzyAPI
-FROM python:latest
+# Custom Image : Fuzzy API
+FROM python:latest AS fuzzyapi
 
 WORKDIR /code
 
 COPY requirements.txt .
 
-RUN pip install -r requirements.txt
+RUN pip install --no-cache-dir --upgrade -q -r requirements.txt
 
-COPY api/ code/api/
+COPY ./api /code/api
 
-EXPOSE 8000
+CMD ["uvicorn", "api.app:app", "--host", "0.0.0.0", "--port", "8000"]
 
-CMD ["uvicorn", "api.app:app", "--host", "127.0.0.1", "--port", "8000"]
+
