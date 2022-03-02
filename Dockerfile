@@ -1,5 +1,5 @@
-# Custom Image : Fuzzy API
-FROM python:latest AS fuzzyapi
+# Custom Image : Fuzzy API AS fuzzyapi
+FROM python:latest
 
 WORKDIR /code
 
