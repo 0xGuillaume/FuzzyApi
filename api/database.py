@@ -2,7 +2,7 @@ import motor.motor_asyncio
 from .models import FooModel
 
 
-MONGODB_URL = "mongodb://root:root@0.0.0.0:27017"
+MONGODB_URL = "mongodb://root:root@mongo:27017"
 
 client = motor.motor_asyncio.AsyncIOMotorClient(MONGODB_URL)
 database = client.fuzzy
