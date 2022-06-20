@@ -5,13 +5,19 @@ version: '3'
 services:
 
   mongo:
-    image: mongo
+    build:
+      context: .
+      target: fuzzydb
+        #image: mongo
     restart: always
     ports:
       - 27017:27017
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: root
+      MONGO_INITDB_DATABASE: fuzzy  
+    volumes:
+      - ./db/mongo_init.js:/docker-entrypoint-initdb.d/mongo_init.js:ro
 
   mongo-express:
     image: mongo-express
@@ -23,7 +29,9 @@ services:
       ME_CONFIG_MONGODB_ADMINPASSWORD: root
       ME_CONFIG_MONGODB_URL: mongodb://root:root@mongo:27017/
 
-  fast-api:
-    build: .
-    ports:
-      -8000:8000
+  #fast-api:
+  #build: 
+  #    context: .
+  #    target: fuzzyapi
+  #  ports:
+  #    - 8000:8000
