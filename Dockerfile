@@ -1,5 +1,5 @@
 # Custom Image : Fuzzy API AS fuzzyapi
-FROM python:latest
+FROM python:3.12.0a5-buster
 
 WORKDIR /code
 
