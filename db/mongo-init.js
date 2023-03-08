@@ -3,7 +3,7 @@ db.getSiblingDB('fuzzy');
 db.createUser(
 	{
 		user: "api",
-		pwd: "root",
+		pwd: "",
 		roles: [
 			{
 				role: "readWrite",
