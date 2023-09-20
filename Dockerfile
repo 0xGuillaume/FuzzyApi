@@ -1,5 +1,5 @@
 # Custom Image : Fuzzy API AS fuzzyapi
-FROM python:3.12.0a5-slim
+FROM python:3.12.0rc2-slim
 
 WORKDIR /code
 
